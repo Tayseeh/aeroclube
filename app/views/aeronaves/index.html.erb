@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>LISTAR AERONAVES</h1>
+<h1 class="text-center">LISTA DE AERONAVES </h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>NOME</th>
-      <th>NUMERO DE TRRIPULANTES</th>
-      <th>TAMANHO</th>
-      <th>NUMERO</th>
-      <th>CHASSI</th>
-      <th>QUANTIDADE DE HORAS DE VOO</th>
-      <th>QUANTIDADE DE MOTOR</th>
+      <th scope="col">NOME</th>
+      <th scope="col">NUMERO DE TRRIPULANTES</th>
+      <th scope="col">TAMANHO</th>
+      <th scope="col">NUMERO</th>
+      <th scope="col">CHASSI</th>
+      <th scope="col">QUANTIDADE DE HORAS DE VOO</th>
+      <th scope="col">QUANTIDADE DE MOTOR</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,6 +19,7 @@
   <tbody>
     <% @aeronaves.each do |aeronave| %>
       <tr>
+       <th scope="row"></th>
         <td><%= aeronave.nome %></td>
         <td><%= aeronave.numero_tripulantes %></td>
         <td><%= aeronave.tamanho %></td>
@@ -35,5 +36,4 @@
 </table>
 
 <br>
-
-<%= link_to 'NOVA AERONAVE', new_aeronave_path %>
+ <p class="text-center"> <%= link_to 'NOVA AERONAVE', new_aeronave_path, class: ' btn btn-primary btn-lg' %> </p>
