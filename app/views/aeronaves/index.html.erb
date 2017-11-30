@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>LISTAR AERONAVES</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>NOME</th>
+      <th>NUMERO DE TRRIPULANTES</th>
+      <th>TAMANHO</th>
+      <th>NUMERO</th>
+      <th>CHASSI</th>
+      <th>QUANTIDADE DE HORAS DE VOO</th>
+      <th>QUANTIDADE DE MOTOR</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aeronaves.each do |aeronave| %>
+      <tr>
+        <td><%= aeronave.nome %></td>
+        <td><%= aeronave.numero_tripulantes %></td>
+        <td><%= aeronave.tamanho %></td>
+        <td><%= aeronave.numero %></td>
+        <td><%= aeronave.chassi %></td>
+        <td><%= aeronave.quantidade_horas_voo %></td>
+        <td><%= aeronave.quantidade_motor %></td>
+        <td><%= link_to 'Show', aeronave %></td>
+        <td><%= link_to 'Edit', edit_aeronave_path(aeronave) %></td>
+        <td><%= link_to 'Destroy', aeronave, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'NOVA AERONAVE', new_aeronavinite_path %>
